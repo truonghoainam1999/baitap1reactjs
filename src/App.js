@@ -1,24 +1,62 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+import Home from './components/Home'
+import About from './components/About'
+import Contact from './components/Contact'
+import Coures from './components/Coures'
+import LearnGit from './components/LearnGit'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav className="navbar">
+          <ul className="navbar_list">
+            <li className="navbar_item">
+              <Link className="navbar_link" to='/'>Home</Link>
+            </li>
+            <li className="navbar_item">
+              <Link className="navbar_link" to='/about'>About</Link>
+            </li>
+            <li className="navbar_item">
+              <Link className="navbar_link" to='/contact'>Contact</Link>
+            </li>
+            <li className="navbar_item">
+              <Link className="navbar_link" to='/coures'>Coures</Link>
+            </li>
+            <li className="navbar_item">
+              <Link className="navbar_link" to='/learngit'>LearnGit</Link>
+            </li>
+          </ul>
+        </nav>
+        <hr/>
+
+        <Switch>
+          <Route exact path="/">
+              <Home/>
+          </Route>
+          <Route path="/about">
+              <About/>
+          </Route>
+          <Route path="/contact">
+              <Contact/>
+          </Route>
+          <Route path="/coures">
+              <Coures/>
+          </Route>
+          <Route path='/learngit'>
+              <LearnGit/>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
