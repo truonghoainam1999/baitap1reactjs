@@ -29,10 +29,10 @@ function App() {
               <Link className="navbar_link" to='/contact'>Contact</Link>
             </li>
             <li className="navbar_item">
-              <Link className="navbar_link" to='/coures'>Coures</Link>
+              <Link className="navbar_link" to='/courses'>Coures</Link>
             </li>
             <li className="navbar_item">
-              <Link className="navbar_link" to='/learngit'>LearnGit</Link>
+              <Link className="navbar_link" to='/learn-git'>LearnGit</Link>
             </li>
           </ul>
         </nav>
@@ -48,10 +48,10 @@ function App() {
           <Route path="/contact">
               <Contact/>
           </Route>
-          <Route path="/coures">
+          <Route path="/courses">
               <Coures/>
           </Route>
-          <Route path='/learngit'>
+          <Route path='/learn-git'>
               <LearnGit/>
           </Route>
         </Switch>
